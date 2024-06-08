@@ -8,8 +8,9 @@ const Wrapper = styled.div`
     justify-content: center;
     height: 100vh;
     background-color: #00071e;
-    overflow-x: hidden;
+    overflow-x: auto;
     gap: 40px;
+    padding: 0px 20px;
 `;
 
 const data = [

@@ -54,7 +54,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #1c2443;
+    border: 2px solid rgb(28, 36, 67);
     background-color: #060c26;
     &:hover {
         height: 600px;

@@ -18,7 +18,7 @@ const TextWrapper = styled.div`
     align-items: center;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
+    width: 100%;
     bottom: 5%;
     gap: 16px;
 `;
