@@ -8,9 +8,16 @@ const Wrapper = styled.div`
     justify-content: center;
     height: 100vh;
     background-color: #00071e;
-    overflow-x: auto;
-    gap: 40px;
     padding: 0px 20px;
+`;
+
+const Container = styled.div`
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    overflow-x: auto;
 `;
 
 const data = [
@@ -25,9 +32,11 @@ const data = [
 const Project = () => {
     return (
         <Wrapper>
-            {data.map((item, i) => (
-                <ProjectBox name={item.name} num={i + 1} key={item.name} />
-            ))}
+            <Container>
+                {data.map((item, i) => (
+                    <ProjectBox name={item.name} num={i + 1} key={item.name} />
+                ))}
+            </Container>
         </Wrapper>
     );
 };

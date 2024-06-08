@@ -50,6 +50,7 @@ const Wrapper = styled.div`
     cursor: pointer;
     position: relative;
     width: 330px;
+    min-width: 280px;
     height: 440px;
     display: flex;
     flex-direction: column;

@@ -8,12 +8,12 @@ const CustomCursorWrapper = styled.div`
     height: 140px;
     border-radius: 100%;
     text-align: center;
-    background: #fefefe;
+    background-color: #fefefe;
     color: #00071e;
     font-size: 22px;
     font-weight: bold;
     transition: transform 0.1s ease-in-out;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -90%);
     display: flex;
     align-items: center;
     justify-content: center;

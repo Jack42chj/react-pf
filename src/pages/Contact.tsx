@@ -22,6 +22,10 @@ const Text = styled.div`
     @media (max-width: 769px) {
         font-size: 28px;
     }
+    &.mail {
+        color: #acccee;
+        font-size: 20px;
+    }
     &.desc {
         color: #a1a1aa;
         font-size: 20px;
@@ -47,15 +51,14 @@ const LinkItem = styled.div`
         width: auto;
         &:hover {
             transform: scale(1.2);
-            fill: #fff;
         }
     }
 `;
 
 const Contact = () => {
     const onClickLink = (name: string) => {
-        let url;
-        if (name === "github") {
+        let url = "";
+        if (name === "velog") {
             url = "https://velog.io/@hojinch99/posts";
         } else url = "https://github.com/Jack42chj";
         window.open(url, "_blank");
@@ -63,7 +66,7 @@ const Contact = () => {
     return (
         <Wrapper>
             <Text>저에 대해 궁금하신가요?</Text>
-            <Text className="desc">hojinch99@gmail.com</Text>
+            <Text className="mail">hojinch99@gmail.com</Text>
             <ContactBtn />
             <Footer>
                 <Text className="desc">&#169; 2024 Choi Hojin</Text>

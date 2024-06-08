@@ -1,5 +1,14 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Header from "../components/Header";
+
+const slideUp = keyframes`
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+`;
 
 const Wrapper = styled.div`
     width: 100%;
