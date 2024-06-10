@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ProjectBox from "../components/ProjectBox";
+import ProjectModal from "../components/ProjectModal";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -36,6 +37,7 @@ const Project = () => {
                 {data.map((item, i) => (
                     <ProjectBox name={item.name} num={i + 1} key={item.name} />
                 ))}
+                <ProjectModal />
             </Container>
         </Wrapper>
     );

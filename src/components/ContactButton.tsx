@@ -7,7 +7,7 @@ const BtnWrapper = styled.div`
     background-color: transparent;
     border: 1px solid #ffffff;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 8px;
     font-weight: bold;
     display: flex;

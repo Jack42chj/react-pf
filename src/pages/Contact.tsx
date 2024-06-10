@@ -23,7 +23,7 @@ const Text = styled.div`
         font-size: 28px;
     }
     &.mail {
-        color: #acccee;
+        color: #a6b6c9;
         font-size: 20px;
     }
     &.desc {
@@ -72,7 +72,7 @@ const Contact = () => {
                 <Text className="desc">&#169; 2024 Choi Hojin</Text>
                 <LinkItem onClick={() => onClickLink("github")}>
                     <img
-                        src="/svg/github.svg"
+                        src="/svg/skills/github.svg"
                         alt="github-logo"
                         width="18px"
                         height="18px"
@@ -80,7 +80,7 @@ const Contact = () => {
                 </LinkItem>
                 <LinkItem onClick={() => onClickLink("velog")}>
                     <img
-                        src="/svg/velog.svg"
+                        src="/svg/skills/velog.svg"
                         alt="velog-logo"
                         width="18px"
                         height="18px"

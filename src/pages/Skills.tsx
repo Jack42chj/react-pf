@@ -96,7 +96,7 @@ const Skills = () => {
                         >
                             <img
                                 className={item.svg}
-                                src={`/svg/${item.svg}.svg`}
+                                src={`/svg/skills/${item.svg}.svg`}
                                 alt={item.name}
                                 width={item.w}
                                 height={item.h}

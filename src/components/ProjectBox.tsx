@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import ModalControl from "../stores/ModalControl";
+import { useStore } from "zustand";
 
 const Line = styled.div`
     position: absolute;
@@ -50,7 +52,6 @@ const Wrapper = styled.div`
     cursor: pointer;
     position: relative;
     width: 330px;
-    min-width: 280px;
     height: 440px;
     display: flex;
     flex-direction: column;
@@ -83,8 +84,9 @@ const Wrapper = styled.div`
 `;
 
 const ProjectBox: React.FC<{ name: string; num: number }> = ({ name, num }) => {
+    const { setOpenModal } = useStore(ModalControl);
     return (
-        <Wrapper>
+        <Wrapper onClick={() => setOpenModal(name)}>
             <Logo />
             <Picture />
             <Item className="project">{name}</Item>

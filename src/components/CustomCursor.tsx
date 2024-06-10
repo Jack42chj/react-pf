@@ -10,7 +10,7 @@ const CustomCursorWrapper = styled.div`
     text-align: center;
     background-color: #fefefe;
     color: #00071e;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     transition: transform 0.1s ease-in-out;
     transform: translate(-50%, -90%);
