@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import ModalControl from "../stores/ModalControl";
-import { useStore } from "zustand";
 
 const Line = styled.div`
     position: absolute;
@@ -84,7 +83,7 @@ const Wrapper = styled.div`
 `;
 
 const ProjectBox: React.FC<{ name: string; num: number }> = ({ name, num }) => {
-    const { setOpenModal } = useStore(ModalControl);
+    const { setOpenModal } = ModalControl();
     return (
         <Wrapper onClick={() => setOpenModal(name)}>
             <Logo />

@@ -5,7 +5,6 @@ import ProjectModal from "../components/ProjectModal";
 const Wrapper = styled.div`
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     height: 100vh;
     background-color: #00071e;
@@ -15,10 +14,9 @@ const Wrapper = styled.div`
 const Container = styled.div`
     width: 90%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    margin-top: 200px;
     gap: 40px;
-    overflow-x: auto;
 `;
 
 const data = [
