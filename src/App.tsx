@@ -6,6 +6,7 @@ import reset from "styled-reset";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
+import ModalControl from "./stores/ModalControl";
 
 const GlobalStyles = createGlobalStyle`
   ${reset};
@@ -28,20 +29,22 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const App = () => {
+    const { isOpen } = ModalControl();
     const [currentPage, setCurrentPage] = useState<number>(0);
     const totalPages = 5;
 
     useEffect(() => {
         const handleWheel = (e: WheelEvent) => {
-            e.preventDefault();
-
-            if (e.deltaY > 0) {
-                if (currentPage < totalPages - 1) {
-                    setCurrentPage(currentPage + 1);
-                }
-            } else if (e.deltaY < 0) {
-                if (currentPage > 0) {
-                    setCurrentPage(currentPage - 1);
+            if (!isOpen) {
+                e.preventDefault();
+                if (e.deltaY > 0) {
+                    if (currentPage < totalPages - 1) {
+                        setCurrentPage(currentPage + 1);
+                    }
+                } else if (e.deltaY < 0) {
+                    if (currentPage > 0) {
+                        setCurrentPage(currentPage - 1);
+                    }
                 }
             }
         };
@@ -51,7 +54,7 @@ const App = () => {
         return () => {
             window.removeEventListener("wheel", handleWheel);
         };
-    }, [currentPage]);
+    }, [currentPage, isOpen]);
 
     useEffect(() => {
         const posY = currentPage * window.innerHeight;

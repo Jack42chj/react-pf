@@ -12,20 +12,20 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-    width: 90%;
+    width: 78%;
     display: flex;
-    justify-content: center;
     margin-top: 200px;
     gap: 40px;
+    overflow: auto;
 `;
 
 const data = [
-    { name: "PROFITTY" },
-    { name: "FUTBOLISTA" },
-    { name: "MOLBWA" },
-    { name: "MUSTGO" },
-    { name: "BINZIP" },
     { name: "COFFEEZIP" },
+    { name: "BINZIP" },
+    { name: "MUSTGO" },
+    { name: "MOLBWA" },
+    { name: "FUTBOLISTA" },
+    { name: "PROFITTY" },
 ];
 
 const Project = () => {
@@ -35,8 +35,8 @@ const Project = () => {
                 {data.map((item, i) => (
                     <ProjectBox name={item.name} num={i + 1} key={item.name} />
                 ))}
-                <ProjectModal />
             </Container>
+            <ProjectModal />
         </Wrapper>
     );
 };

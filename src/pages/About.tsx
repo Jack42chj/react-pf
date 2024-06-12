@@ -19,11 +19,12 @@ const Container = styled.div`
     gap: 20px;
     background-color: #060c26;
     border: 2px solid rgb(28, 36, 67);
-    @media (max-width: 1025px) {
+    @media (max-width: 769px) {
         flex-direction: column;
-        height: 90vh;
         width: 90%;
+        height: 90vh;
     }
+    overflow-y: auto;
 `;
 
 const MyPic = styled.div`
@@ -35,10 +36,11 @@ const MyPic = styled.div`
     width: 60%;
     height: 100%;
     right: 3%;
-    @media (max-width: 1025px) {
+    @media (max-width: 769px) {
         height: 50%;
         width: 100%;
         right: 0;
+        min-height: 200px;
     }
     &:before {
         content: "";
@@ -94,9 +96,9 @@ const Text = styled.div`
         }
     }
     &.info {
-        font-weight: normal;
+        font-weight: bold;
         color: #a6b6c9;
-        font-size: 16px;
+        font-size: 14px;
         display: flex;
         align-items: center;
         gap: 12px;
@@ -169,6 +171,8 @@ const About = () => {
                     </InfoWrapper>
                     <Text className="title">소통하며 함께 성장하는 개발자</Text>
                     <Text className="desc">
+                        신입 프론트엔드 개발자를 준비하고 있는 최호진입니다.
+                        <br />
                         제가 생각하는 개발은 가독성과 유지보수성이 높은 코드를
                         작성하는 것입니다.
                         <br />

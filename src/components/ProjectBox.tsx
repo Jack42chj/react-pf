@@ -50,7 +50,7 @@ const Picture = styled.div`
 const Wrapper = styled.div`
     cursor: pointer;
     position: relative;
-    width: 330px;
+    min-width: 330px;
     height: 440px;
     display: flex;
     flex-direction: column;
