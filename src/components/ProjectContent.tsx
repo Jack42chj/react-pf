@@ -10,12 +10,15 @@ interface ListProps {
     git_link: string;
     v_link: string;
     web_link: string;
+    img: string;
 }
 
-const Image = styled.div`
+const Image = styled.div<{ $link: string }>`
     width: 55%;
     height: 100%;
-    background-color: #d9d9d9;
+    background-image: url(${(props) => props.$link});
+    background-size: cover;
+    background-position: center;
     border-radius: 10px 0px 0px 10px;
     @media (max-width: 1025px) {
         width: 100%;
@@ -108,7 +111,7 @@ const ProjectContent: React.FC<{ list: ListProps; title: string }> = ({
     };
     return (
         <>
-            <Image></Image>
+            <Image $link={list.img} />
             <DescWrapper>
                 <Text className="title">{title}</Text>
                 <Text className="desc">{list.desc}</Text>

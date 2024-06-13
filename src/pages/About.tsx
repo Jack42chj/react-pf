@@ -23,8 +23,8 @@ const Container = styled.div`
         flex-direction: column;
         width: 90%;
         height: 90vh;
+        overflow-y: auto;
     }
-    overflow-y: auto;
 `;
 
 const MyPic = styled.div`
@@ -36,6 +36,7 @@ const MyPic = styled.div`
     width: 60%;
     height: 100%;
     right: 3%;
+
     @media (max-width: 769px) {
         height: 50%;
         width: 100%;
