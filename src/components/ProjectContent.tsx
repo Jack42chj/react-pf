@@ -117,16 +117,16 @@ const ProjectContent: React.FC<{ list: ListProps; title: string }> = ({
                 <Text className="desc">{list.desc}</Text>
                 <Text className="desc">{list.date}</Text>
                 <Text className="desc">{list.role}</Text>
-                <Text className="subtitle">프로젝트 설명</Text>
+                <Text className="subtitle">💡 프로젝트 설명</Text>
                 <Text className="desc_spc">{list.intro}</Text>
-                <Text className="subtitle">개발 주요 사항</Text>
+                <Text className="subtitle">📜 개발 주요 사항</Text>
                 <Text
                     className="desc_spc"
                     dangerouslySetInnerHTML={{
                         __html: list.desc_spc,
                     }}
                 ></Text>
-                <Text className="subtitle">기술 스택</Text>
+                <Text className="subtitle">⚙️ 기술 스택</Text>
                 <SkillBox>
                     {list.skill.split(",").map((item: string) => {
                         const Skill = item.trim();
@@ -144,7 +144,7 @@ const ProjectContent: React.FC<{ list: ListProps; title: string }> = ({
                         );
                     })}
                 </SkillBox>
-                <Text className="subtitle">Link</Text>
+                <Text className="subtitle">🔗 Link</Text>
                 <SkillBox>
                     {list.git_link && (
                         <LinkItem onClick={() => onClickLink(list.git_link)}>

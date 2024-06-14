@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import ProjectBox from "../components/ProjectBox";
 import ProjectModal from "../components/ProjectModal";
+import SwiperSlider from "../components/Swiper";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -12,29 +12,21 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-    width: 78%;
+    width: 80%;
+    position: relative;
+    top: 20%;
     display: flex;
-    margin-top: 200px;
     gap: 40px;
-    overflow: auto;
+    @media (max-width: 1025px) {
+        width: 90%;
+    }
 `;
-
-const data = [
-    { name: "COFFEEZIP" },
-    { name: "BINZIP" },
-    { name: "MUSTGO" },
-    { name: "MOLBWA" },
-    { name: "FUTBOLISTA" },
-    { name: "PROFITTY" },
-];
 
 const Project = () => {
     return (
         <Wrapper>
             <Container>
-                {data.map((item, i) => (
-                    <ProjectBox name={item.name} num={i + 1} key={item.name} />
-                ))}
+                <SwiperSlider />
             </Container>
             <ProjectModal />
         </Wrapper>
