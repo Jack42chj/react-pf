@@ -29,7 +29,7 @@ const Container = styled.div`
 
 const MyPic = styled.div`
     position: relative;
-    background-image: url("/me.webp");
+    background-image: url("/webp/me.webp");
     background-size: cover;
     background-position: center;
     max-width: 615px;

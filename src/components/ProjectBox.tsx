@@ -28,21 +28,24 @@ const Item = styled.div`
     }
 `;
 
-const Logo = styled.div`
+const Logo = styled.div<{ $link: string }>`
     position: absolute;
     bottom: 50%;
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
     height: 100px;
-    border-radius: 999%;
-    background-color: #0f193b;
+    background-image: url(${(props) => `/logo/${props.$link}.webp`});
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1s;
 `;
 
-const Picture = styled.div`
+const Picture = styled.div<{ $link: string }>`
     width: 90%;
     margin-top: 16px;
-    background-color: #1c2443;
+    background-image: url(${(props) => `/webp/${props.$link}.webp`});
+    background-position: center;
     height: 0px;
     transition: 1s;
 `;
@@ -75,7 +78,6 @@ const Wrapper = styled.div`
     }
     &:hover ${Logo} {
         opacity: 0;
-        transition: 1s;
     }
     &:hover ${Picture} {
         height: 400px;
@@ -86,8 +88,8 @@ const ProjectBox: React.FC<{ name: string; num: number }> = ({ name, num }) => {
     const { setOpenModal } = ModalControl();
     return (
         <Wrapper onClick={() => setOpenModal(name)}>
-            <Logo />
-            <Picture />
+            <Logo $link={name.toLowerCase()} />
+            <Picture $link={name.toLowerCase()} />
             <Item className="project">{name}</Item>
             <Item className="num">0{num}</Item>
             <Line />
