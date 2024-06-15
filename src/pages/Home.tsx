@@ -17,9 +17,9 @@ const TextWrapper = styled.div`
     justify-content: center;
     align-items: center;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 100%;
-    bottom: 5%;
+    top: 50%;
     gap: 16px;
 `;
 
@@ -28,7 +28,7 @@ const Text = styled.div`
     &.job {
         line-height: 18px;
         color: #ffffff;
-        font-size: 18px;
+        font-size: 24px;
         letter-spacing: 16px;
         font-weight: bold;
         @media (max-width: 1025px) {
@@ -37,14 +37,14 @@ const Text = styled.div`
     }
     &.name {
         color: #ffffff;
-        font-size: 84px;
+        font-size: 128px;
         @media (max-width: 1025px) {
             font-size: 52px;
         }
     }
     &.desc {
         color: #e4b783;
-        font-size: 16px;
+        font-size: 24px;
         letter-spacing: 12px;
         font-weight: bold;
     }
@@ -53,7 +53,7 @@ const Text = styled.div`
 const Home = () => {
     return (
         <Wrapper>
-            <Header />
+            {/* <Header /> */}
             <TextWrapper>
                 <Text className="job">FRONTEND DEVELOPER</Text>
                 <Text className="name">CHOI HOJIN</Text>

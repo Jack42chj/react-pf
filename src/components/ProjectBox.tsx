@@ -56,6 +56,16 @@ const Triangle = styled.div`
     transition: opacity 1s;
 `;
 
+const Circle = styled.div`
+    position: absolute;
+    top: 63%;
+    transition: opacity 1s;
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background-color: #8798d4;
+`;
+
 const Wrapper = styled.div`
     cursor: pointer;
     position: relative;
@@ -82,7 +92,7 @@ const Wrapper = styled.div`
             transition: 1s;
         }
     }
-    &:hover ${Logo}, &:hover ${Triangle} {
+    &:hover ${Logo}, &:hover ${Triangle}, &:hover ${Circle} {
         opacity: 0;
     }
     &:hover ${Picture} {
@@ -102,6 +112,7 @@ const ProjectBox: React.FC<{ name: string; num: number }> = ({ name, num }) => {
                     height="24px"
                 />
             </Triangle>
+            <Circle />
             <Logo $link={name.toLowerCase()} />
             <Picture $link={name.toLowerCase()} />
             <Item className="project">{name}</Item>

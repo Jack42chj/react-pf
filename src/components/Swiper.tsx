@@ -10,7 +10,24 @@ import styled from "styled-components";
 const CustomSwiper = styled(Swiper)`
     .swiper-button-next,
     .swiper-button-prev {
-        display: none;
+        display: flex;
+        color: #fff;
+        top: 25%;
+        opacity: 1;
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+    }
+    .swiper-button-prev {
+        left: 0px;
+    }
+    .swiper-button-next {
+        right: 0px;
+    }
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
     }
     .swiper-pagination {
         bottom: 25%;

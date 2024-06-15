@@ -83,7 +83,7 @@ const Text = styled.div`
     }
     &.title {
         color: #fff;
-        font-size: 44px;
+        font-size: 36px;
         @media (max-width: 1025px) {
             font-size: 24px;
         }
@@ -99,10 +99,13 @@ const Text = styled.div`
     &.info {
         font-weight: bold;
         color: #a6b6c9;
-        font-size: 14px;
+        font-size: 16px;
         display: flex;
         align-items: center;
         gap: 12px;
+        @media (max-width: 1025px) {
+            font-size: 14px;
+        }
     }
 `;
 
@@ -170,21 +173,20 @@ const About = () => {
                             https://velog.io/@hojinch99/posts
                         </Text>
                     </InfoWrapper>
-                    <Text className="title">소통하며 함께 성장하는 개발자</Text>
+                    <Text className="title">
+                        " 화이팅 넘치는 긍정 에너지! "
+                    </Text>
                     <Text className="desc">
-                        신입 프론트엔드 개발자를 준비하고 있는 최호진입니다.
+                        안녕하십니까! 신입 프론트엔드 개발자를 준비하고 있는
+                        최호진입니다.
                         <br />
-                        제가 생각하는 개발은 가독성과 유지보수성이 높은 코드를
-                        작성하는 것입니다.
+                        개발을 하다보면 분명 여러 문제에 직면할 수 있습니다.
                         <br />
-                        항상 위와 같은 목표를 잡고 개발에 임하고 있으며 새로운
-                        것을 배우는데 관심이 많습니다.
+                        그러나 긍정적인 마인드와 강한 의지력이라면 어떤 어려움도
+                        극복할 수 있다고 믿습니다.
                         <br />
-                        이를 통해 배운 것에 대한 생각을 정리하고 사람들과 경험을
-                        공유하기 위해 블로그를 운영하고 있습니다.
-                        <br />
-                        지식을 체계적으로 정리하고, 다른 개발자들과 소통하며
-                        함께 성장하는 개발자가 되고싶습니다.
+                        주변 사람들에게도 긍정적 에너지를 전파하며, 함께 성장할
+                        수 있는 환경을 만드는 것이 제 목표입니다.
                     </Text>
                 </DescWrapper>
             </Container>

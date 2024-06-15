@@ -11,6 +11,7 @@ interface ListProps {
     v_link: string;
     web_link: string;
     img: string;
+    colour: string;
 }
 
 const Image = styled.div<{ $link: string }>`
@@ -42,15 +43,17 @@ const DescWrapper = styled.div`
     }
 `;
 
-const Text = styled.div`
-    &.title {
-        font-weight: bold;
-        font-size: 36px;
-        letter-spacing: 8px;
-        @media (max-width: 1025px) {
-            font-size: 24px;
-        }
+const Title = styled.div<{ $color: string }>`
+    font-weight: bold;
+    font-size: 36px;
+    letter-spacing: 8px;
+    color: ${(props) => props.$color};
+    @media (max-width: 1025px) {
+        font-size: 24px;
     }
+`;
+
+const Text = styled.div`
     &.subtitle {
         font-size: 24px;
         font-weight: bold;
@@ -59,7 +62,7 @@ const Text = styled.div`
         }
     }
     &.spec {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: bold;
     }
     &.desc {
@@ -117,7 +120,7 @@ const ProjectContent: React.FC<{ list: ListProps; title: string }> = ({
         <>
             <Image $link={list.img} />
             <DescWrapper>
-                <Text className="title">{title}</Text>
+                <Title $color={list.colour}>{title}</Title>
                 <Text className="spec">{list.desc}</Text>
                 <Text className="desc">{list.date}</Text>
                 <Text className="desc">{list.role}</Text>
