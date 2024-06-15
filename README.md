@@ -1,8 +1,6 @@
 # 🙋‍♂️ 개인 포트폴리오 페이지
 
-<div>
-  <img src="https://github.com/Jack42chj/coffe-zip/assets/86552441/7e022df5-d267-4542-be8c-391ae9fa4371">
-</div>
+![logo](https://github.com/Jack42chj/react-pf/assets/86552441/58c3787d-d378-4e39-ba87-4ac1d5a8785f)
 
 ## ⚙️ 요구 사항(Requirements)
 
