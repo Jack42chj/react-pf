@@ -35,7 +35,7 @@ const Logo = styled.div<{ $link: string }>`
     transform: translateX(-50%);
     width: 100px;
     height: 100px;
-    background-image: url(${(props) => `/logo/${props.$link}.webp`});
+    background-image: url(${(props) => `/webp/logo/${props.$link}.webp`});
     background-position: center;
     background-repeat: no-repeat;
     transition: opacity 1s;
@@ -44,10 +44,16 @@ const Logo = styled.div<{ $link: string }>`
 const Picture = styled.div<{ $link: string }>`
     width: 90%;
     margin-top: 16px;
-    background-image: url(${(props) => `/webp/${props.$link}.webp`});
+    background-image: url(${(props) => `/webp/poster/${props.$link}.webp`});
     background-position: center;
     height: 0px;
     transition: 1s;
+`;
+
+const Triangle = styled.div`
+    position: absolute;
+    top: 5%;
+    transition: opacity 1s;
 `;
 
 const Wrapper = styled.div`
@@ -76,7 +82,7 @@ const Wrapper = styled.div`
             transition: 1s;
         }
     }
-    &:hover ${Logo} {
+    &:hover ${Logo}, &:hover ${Triangle} {
         opacity: 0;
     }
     &:hover ${Picture} {
@@ -88,6 +94,14 @@ const ProjectBox: React.FC<{ name: string; num: number }> = ({ name, num }) => {
     const { setOpenModal } = ModalControl();
     return (
         <Wrapper onClick={() => setOpenModal(name)}>
+            <Triangle>
+                <img
+                    alt="triangle-icon"
+                    src="/svg/icons/triangle.svg"
+                    width="24px"
+                    height="24px"
+                />
+            </Triangle>
             <Logo $link={name.toLowerCase()} />
             <Picture $link={name.toLowerCase()} />
             <Item className="project">{name}</Item>

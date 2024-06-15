@@ -58,6 +58,10 @@ const Text = styled.div`
             font-size: 18px;
         }
     }
+    &.spec {
+        font-size: 14px;
+        font-weight: bold;
+    }
     &.desc {
         font-size: 14px;
     }
@@ -114,7 +118,7 @@ const ProjectContent: React.FC<{ list: ListProps; title: string }> = ({
             <Image $link={list.img} />
             <DescWrapper>
                 <Text className="title">{title}</Text>
-                <Text className="desc">{list.desc}</Text>
+                <Text className="spec">{list.desc}</Text>
                 <Text className="desc">{list.date}</Text>
                 <Text className="desc">{list.role}</Text>
                 <Text className="subtitle">💡 프로젝트 설명</Text>

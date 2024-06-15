@@ -52,6 +52,7 @@ const LinkItem = styled.div`
         &:hover {
             transform: scale(1.2);
         }
+        fill: #a1a1aa;
     }
 `;
 
@@ -72,7 +73,7 @@ const Contact = () => {
                 <Text className="desc">&#169; 2024 Choi Hojin</Text>
                 <LinkItem onClick={() => onClickLink("github")}>
                     <img
-                        src="/svg/skills/github.svg"
+                        src="/svg/icons/github.svg"
                         alt="github-logo"
                         width="18px"
                         height="18px"
@@ -80,7 +81,7 @@ const Contact = () => {
                 </LinkItem>
                 <LinkItem onClick={() => onClickLink("velog")}>
                     <img
-                        src="/svg/skills/velog.svg"
+                        src="/svg/icons/velog.svg"
                         alt="velog-logo"
                         width="18px"
                         height="18px"

@@ -40,9 +40,10 @@ const data = [
     { name: "Tanstack Query", w: "71px", h: "64px", svg: "query" },
     { name: "React Router", w: "110px", h: "60px", svg: "router" },
     { name: "Axios", w: "219px", h: "32px", svg: "axios" },
-    { name: "Styled Components", w: "72px", h: "72px", svg: "sc" },
+    { name: "Styled Components", w: "123px", h: "56px", svg: "sc" },
     { name: "Material UI", w: "75px", h: "64px", svg: "mui" },
     { name: "Tailwind CSS", w: "322px", h: "40px", svg: "tailwind" },
+    { name: "Supabase", w: "267px", h: "56px", svg: "supabase" },
 ];
 
 const Item = styled.div`
@@ -68,6 +69,12 @@ const Item = styled.div`
                 height: 24px;
                 width: auto;
             }
+        }
+    }
+    @media (max-width: 375px) {
+        img {
+            height: 32px;
+            width: auto;
         }
     }
 `;
