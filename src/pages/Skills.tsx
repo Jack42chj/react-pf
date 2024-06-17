@@ -93,7 +93,7 @@ const Skills = () => {
     return (
         <>
             {cursorText && <CustomCursor text={cursorText} />}
-            <Wrapper>
+            <Wrapper id="skill">
                 <ItemWrapper>
                     {data.map((item) => (
                         <Item

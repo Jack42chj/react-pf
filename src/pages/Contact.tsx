@@ -65,7 +65,7 @@ const Contact = () => {
         window.open(url, "_blank");
     };
     return (
-        <Wrapper>
+        <Wrapper id="contact">
             <Text>저에 대해 궁금하신가요?</Text>
             <Text className="mail">hojinch99@gmail.com</Text>
             <ContactBtn />

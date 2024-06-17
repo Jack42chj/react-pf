@@ -24,7 +24,7 @@ const Container = styled.div`
 
 const Project = () => {
     return (
-        <Wrapper>
+        <Wrapper id="project">
             <Container>
                 <SwiperSlider />
             </Container>

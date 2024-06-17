@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ModalControl from "../stores/ModalControl";
+import Store from "../stores/store";
 
 const Line = styled.div`
     position: absolute;
@@ -101,7 +101,7 @@ const Wrapper = styled.div`
 `;
 
 const ProjectBox: React.FC<{ name: string; num: number }> = ({ name, num }) => {
-    const { setOpenModal } = ModalControl();
+    const { setOpenModal } = Store();
     return (
         <Wrapper onClick={() => setOpenModal(name)}>
             <Triangle>

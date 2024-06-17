@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import ModalControl from "../stores/ModalControl";
-import { useQuery } from "@tanstack/react-query";
-import { getProjectData } from "../apis/project-api";
 import { useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
+import styled from "styled-components";
 import ProjectContent from "./ProjectContent";
 import ProjectSkeleton from "./ProjectSkeleton";
+import { getProjectData } from "../apis/project-api";
+import Store from "../stores/store";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -51,7 +51,7 @@ const CancleIcon = styled.div`
 `;
 
 const ProjectModal = () => {
-    const { setCloseModal, title, isOpen } = ModalControl();
+    const { setCloseModal, title, isOpen } = Store();
     const { data: list, isLoading } = useQuery({
         queryKey: ["project_data", title],
         queryFn: async () => getProjectData(title),

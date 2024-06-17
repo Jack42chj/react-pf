@@ -120,7 +120,7 @@ const InfoWrapper = styled.div`
 
 const About = () => {
     return (
-        <Wrapper>
+        <Wrapper id="about">
             <Container>
                 <MyPic />
                 <DescWrapper>

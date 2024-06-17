@@ -1,13 +1,6 @@
-import styled, { keyframes } from "styled-components";
-
-const slideUp = keyframes`
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0%);
-    }
-`;
+import styled from "styled-components";
+import { Link } from "react-scroll";
+import Store from "../stores/store";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -15,7 +8,6 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    animation: ${slideUp} 2s forwards;
 `;
 
 const NavItem = styled.div`
@@ -31,14 +23,29 @@ const NavItem = styled.div`
     }
 `;
 
+const pages = [
+    { id: "about", name: "ABOUT", page: 1 },
+    { id: "skill", name: "SKILLS", page: 2 },
+    { id: "home", name: "LOGO", page: 0 },
+    { id: "project", name: "PROJECTS", page: 3 },
+    { id: "contact", name: "CONTACTS", page: 4 },
+];
+
 const Header = () => {
+    const { setCurrentPage } = Store();
     return (
         <Wrapper>
-            <NavItem>ABOUT</NavItem>
-            <NavItem>SKILLS</NavItem>
-            <NavItem>LOGO</NavItem>
-            <NavItem>PROJECTS</NavItem>
-            <NavItem>CONTACTS</NavItem>
+            {pages.map((item) => (
+                <Link
+                    to={item.id}
+                    spy={true}
+                    smooth={true}
+                    onClick={() => setCurrentPage(item.page)}
+                    key={item.page}
+                >
+                    <NavItem>{item.name}</NavItem>
+                </Link>
+            ))}
         </Wrapper>
     );
 };

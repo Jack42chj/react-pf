@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
-import Home from "./pages/Home";
-import Project from "./pages/Project";
+import { useEffect } from "react";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import Home from "./pages/Home";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
+import Project from "./pages/Project";
 import Contact from "./pages/Contact";
-import ModalControl from "./stores/ModalControl";
+import Store from "./stores/store";
+import TopButton from "./components/TopButton";
 
 const GlobalStyles = createGlobalStyle`
   ${reset};
@@ -29,8 +30,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const App = () => {
-    const { isOpen } = ModalControl();
-    const [currentPage, setCurrentPage] = useState<number>(0);
+    const { isOpen, currentPage, setCurrentPage } = Store();
     const totalPages = 5;
 
     useEffect(() => {
@@ -69,6 +69,7 @@ const App = () => {
             <Skills />
             <Project />
             <Contact />
+            {currentPage !== 0 && <TopButton />}
         </>
     );
 };
