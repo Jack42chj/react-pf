@@ -8,6 +8,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: 10px;
 `;
 
 const NavItem = styled.div`
@@ -43,7 +44,17 @@ const Header = () => {
                     onClick={() => setCurrentPage(item.page)}
                     key={item.page}
                 >
-                    <NavItem>{item.name}</NavItem>
+                    {item.name === "LOGO" ? (
+                        <img
+                            src="/webp/logo/name.webp"
+                            alt="name-logo"
+                            width="202px"
+                            height="128px"
+                            style={{ cursor: "pointer" }}
+                        />
+                    ) : (
+                        <NavItem>{item.name}</NavItem>
+                    )}
                 </Link>
             ))}
         </Wrapper>
