@@ -9,3 +9,9 @@ export const getProjectData = async (name: string) => {
     if (!list) return null;
     return list[0];
 };
+
+export const getBlogData = async () => {
+    const { data: list } = await supabase.from("blog").select("*");
+    if (!list) return null;
+    return list;
+};

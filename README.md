@@ -138,6 +138,7 @@ react-pf
 │  │  └─ project-api.ts
 │  ├─ App.tsx
 │  ├─ components
+│  │  ├─ BlogContent.tsx
 │  │  ├─ ContactButton.tsx
 │  │  ├─ CustomCursor.tsx
 │  │  ├─ Header.tsx
@@ -150,6 +151,7 @@ react-pf
 │  ├─ main.tsx
 │  ├─ pages
 │  │  ├─ About.tsx
+│  │  ├─ Blog.tsx
 │  │  ├─ Contact.tsx
 │  │  ├─ Home.tsx
 │  │  ├─ Project.tsx
