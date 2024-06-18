@@ -1,6 +1,6 @@
-# 🙋‍♂️ 개인 포트폴리오 페이지
+# 🙋‍♂️ 개인 포트폴리오 페이지(Personal Portfolio Page)
 
-![logo](https://github.com/Jack42chj/react-pf/assets/86552441/58c3787d-d378-4e39-ba87-4ac1d5a8785f)
+![logo](https://github.com/Jack42chj/react-pf/assets/86552441/7684bd79-fadb-489f-818e-a8a5103b2ba4)
 
 ## ⚙️ 요구 사항(Requirements)
 
@@ -18,9 +18,11 @@ $ yan dev
 
 ## 🔗 웹 바로가기(Deployment)
 
+https://choihojin.vercel.app/
+
 ## 🗓️ 개발 기간(Development Period)
 
--   **전체 기간 : 2024.06 ~ 현재 진행 중**
+-   **전체 기간 : 2024.06 ~ 2024.06**
 
 ## 📚 기술 스택(Stacks)
 
@@ -158,3 +160,10 @@ react-pf
 ```
 
 ## 🖥️ 미리보기 (Preview)
+
+![1](https://github.com/Jack42chj/react-pf/assets/86552441/48a392b8-0a0b-4e04-8181-7dfc8086435d)
+![2](https://github.com/Jack42chj/react-pf/assets/86552441/e0561b2d-3a1f-4976-a18f-dd1d28069fb0)
+![3](https://github.com/Jack42chj/react-pf/assets/86552441/badc55a8-0d40-4cea-b3f2-b53f8a9f2ce3)
+![4](https://github.com/Jack42chj/react-pf/assets/86552441/d1aca286-dceb-4f9a-8fce-01c5c4641d17)
+![5](https://github.com/Jack42chj/react-pf/assets/86552441/94da41d7-d108-4bbf-9a5e-492b2e46ee77)
+![6](https://github.com/Jack42chj/react-pf/assets/86552441/6693e84e-af95-4c64-b97c-68110d6472be)
