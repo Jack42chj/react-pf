@@ -22,7 +22,7 @@ https://choihojin.vercel.app/
 
 ## 🗓️ 개발 기간(Development Period)
 
--   **전체 기간 : 2024.06 ~ 2024.06**
+-   **전체 기간 : 2024.06.07 ~ 2024.06.18**
 
 ## 📚 기술 스택(Stacks)
 
@@ -74,6 +74,7 @@ react-pf
 ├─ .eslintrc.cjs
 ├─ .gitignore
 ├─ index.html
+├─ package-lock.json
 ├─ package.json
 ├─ public
 │  ├─ svg
@@ -84,6 +85,7 @@ react-pf
 │  │  │  ├─ person.svg
 │  │  │  ├─ phone.svg
 │  │  │  ├─ triangle.svg
+│  │  │  ├─ up.svg
 │  │  │  └─ velog.svg
 │  │  ├─ skills
 │  │  │  ├─ axios.svg
@@ -112,13 +114,16 @@ react-pf
 │  │     ├─ velog.svg
 │  │     └─ vercel.svg
 │  └─ webp
+│     ├─ down.webp
 │     ├─ logo
 │     │  ├─ binzip.webp
 │     │  ├─ coffeezip.webp
 │     │  ├─ futbolista.webp
 │     │  ├─ molbwa.webp
 │     │  ├─ mustgo.webp
-│     │  └─ profitty.webp
+│     │  ├─ name.webp
+│     │  ├─ profitty.webp
+│     │  └─ web.webp
 │     ├─ me.webp
 │     └─ poster
 │        ├─ binzip.webp
@@ -140,7 +145,8 @@ react-pf
 │  │  ├─ ProjectContent.tsx
 │  │  ├─ ProjectModal.tsx
 │  │  ├─ ProjectSkeleton.tsx
-│  │  └─ Swiper.tsx
+│  │  ├─ Swiper.tsx
+│  │  └─ TopButton.tsx
 │  ├─ main.tsx
 │  ├─ pages
 │  │  ├─ About.tsx
@@ -149,7 +155,7 @@ react-pf
 │  │  ├─ Project.tsx
 │  │  └─ Skills.tsx
 │  ├─ stores
-│  │  └─ ModalControl.ts
+│  │  └─ store.ts
 │  ├─ supabase
 │  │  └─ supabase.ts
 │  └─ vite-env.d.ts
@@ -159,7 +165,13 @@ react-pf
 └─ yarn.lock
 ```
 
-## 🖥️ 미리보기 (Preview)
+## ⚡ 웹 성능 평가(Performance)
+
+-   **Google Lighthouse**
+
+-   **Pingdom Website Speed Test**
+
+## 🏖️ 미리보기 (Preview)
 
 ![1](https://github.com/Jack42chj/react-pf/assets/86552441/48a392b8-0a0b-4e04-8181-7dfc8086435d)
 ![2](https://github.com/Jack42chj/react-pf/assets/86552441/e0561b2d-3a1f-4976-a18f-dd1d28069fb0)

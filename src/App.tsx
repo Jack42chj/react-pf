@@ -69,7 +69,7 @@ const App = () => {
             <Skills />
             <Project />
             <Contact />
-            {currentPage !== 0 && <TopButton />}
+            {currentPage !== 0 && isOpen !== true && <TopButton />}
         </>
     );
 };
