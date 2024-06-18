@@ -9,18 +9,46 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: space-evenly;
     margin-top: 10px;
+    @media (max-width: 1025px) {
+        margin-top: 0px;
+    }
+    @media (max-width: 481px) {
+        display: none;
+    }
+`;
+
+const ItemImg = styled.div`
+    cursor: pointer;
+    @media (max-width: 1025px) {
+        img {
+            width: auto;
+            height: 96px;
+        }
+    }
+    @media (max-width: 691px) {
+        img {
+            width: auto;
+            height: 72px;
+        }
+    }
 `;
 
 const NavItem = styled.div`
     cursor: pointer;
     color: #acccee;
     font-weight: bold;
+    text-align: center;
     font-size: 1.2rem;
+    min-width: 128px;
     &:hover {
         color: #e4b783;
     }
     @media (max-width: 1025px) {
         font-size: 0.9rem;
+    }
+    @media (max-width: 691px) {
+        min-width: 64px;
+        font-size: 0.7rem;
     }
 `;
 
@@ -45,13 +73,14 @@ const Header = () => {
                     key={item.page}
                 >
                     {item.name === "LOGO" ? (
-                        <img
-                            src="/webp/logo/name.webp"
-                            alt="name-logo"
-                            width="202px"
-                            height="128px"
-                            style={{ cursor: "pointer" }}
-                        />
+                        <ItemImg>
+                            <img
+                                src="/webp/logo/name.webp"
+                                alt="name-logo"
+                                width="135px"
+                                height="128px"
+                            />
+                        </ItemImg>
                     ) : (
                         <NavItem>{item.name}</NavItem>
                     )}
