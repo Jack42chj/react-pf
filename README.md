@@ -1,6 +1,6 @@
 # 🙋‍♂️ 개인 포트폴리오 페이지(Personal Portfolio Page)
 
-![logo](https://github.com/Jack42chj/react-pf/assets/86552441/7684bd79-fadb-489f-818e-a8a5103b2ba4)
+![logo](https://github.com/Jack42chj/react-pf/assets/86552441/5c2a2837-0e90-4efc-b4b0-08ab71dc3adc)
 
 ## ⚙️ 요구 사항(Requirements)
 
@@ -177,7 +177,7 @@ react-pf
 
 ## 🏖️ 미리보기 (Preview)
 
-![1](https://github.com/Jack42chj/react-pf/assets/86552441/48a392b8-0a0b-4e04-8181-7dfc8086435d)
+![1](https://github.com/Jack42chj/react-pf/assets/86552441/b4655eb6-7d10-41ed-acf7-ba6cee4c8a46)
 ![2](https://github.com/Jack42chj/react-pf/assets/86552441/e0561b2d-3a1f-4976-a18f-dd1d28069fb0)
 ![3](https://github.com/Jack42chj/react-pf/assets/86552441/badc55a8-0d40-4cea-b3f2-b53f8a9f2ce3)
 ![4](https://github.com/Jack42chj/react-pf/assets/86552441/d1aca286-dceb-4f9a-8fce-01c5c4641d17)
