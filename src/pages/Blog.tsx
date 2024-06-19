@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import BlogContent from "../components/BlogContent";
 import { useQuery } from "@tanstack/react-query";
@@ -32,6 +33,7 @@ const Container = styled.div`
 `;
 
 const Blog = () => {
+    const [hovered, setHovered] = useState<string | null>(null);
     const { data: list } = useQuery({
         queryKey: ["blog_data"],
         queryFn: async () => getBlogData(),
@@ -41,7 +43,14 @@ const Blog = () => {
             <Container>
                 {list &&
                     list.map((item) => (
-                        <BlogContent key={item.title} data={item} />
+                        <BlogContent
+                            key={item.title}
+                            data={item}
+                            isHovered={hovered === item.title}
+                            isOtherHovered={hovered !== null}
+                            onHover={() => setHovered(item.title)}
+                            onLeave={() => setHovered(null)}
+                        />
                     ))}
             </Container>
         </Wrapper>

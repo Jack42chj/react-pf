@@ -17,6 +17,9 @@ const Picture = styled.div<{ $link: string }>`
     @media (max-width: 1025px) {
         height: 150px;
     }
+    @media (max-width: 480px) {
+        height: 96px;
+    }
 `;
 
 const Text = styled.div`
@@ -42,19 +45,21 @@ const Bar = styled.div`
     width: 25%;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ $isHovered: boolean; $isOtherHovered: boolean }>`
     width: 25%;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    opacity: ${(props) =>
+        props.$isOtherHovered ? (props.$isHovered ? 1 : 0.4) : 1};
+    transition: 0.5s;
+    &:hover {
+    }
     &:hover ${Text} {
         &.title {
             color: #66d6df;
         }
-    }
-    &:hover ${Picture} {
-        transform: scale(1.02);
     }
     &:hover ${Bar} {
         width: 100%;
@@ -78,12 +83,24 @@ const Wrapper = styled.div`
     }
 `;
 
-const BlogContent: React.FC<{ data: BlogDataProps }> = ({ data }) => {
+const BlogContent: React.FC<{
+    data: BlogDataProps;
+    isHovered: boolean;
+    isOtherHovered: boolean;
+    onHover: () => void;
+    onLeave: () => void;
+}> = ({ data, isHovered, isOtherHovered, onHover, onLeave }) => {
     const onClickLink = (url: string) => {
         window.open(url, "_blank");
     };
     return (
-        <Wrapper onClick={() => onClickLink(data.url)}>
+        <Wrapper
+            onClick={() => onClickLink(data.url)}
+            $isHovered={isHovered}
+            $isOtherHovered={isOtherHovered}
+            onMouseEnter={onHover}
+            onMouseLeave={onLeave}
+        >
             <Picture $link={data.img} />
             <Text className="title">{data.title}</Text>
             <Text className="date">{data.date}</Text>

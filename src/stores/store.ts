@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 interface ModalType {
-    isOpen: Boolean;
+    isOpen: boolean;
     title: string;
     currentPage: number;
     setOpenModal: (name: string) => void;

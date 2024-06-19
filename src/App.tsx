@@ -55,6 +55,7 @@ const App = () => {
         return () => {
             window.removeEventListener("wheel", handleWheel);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentPage, isOpen]);
 
     useEffect(() => {
