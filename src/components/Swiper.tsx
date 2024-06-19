@@ -48,6 +48,7 @@ const data = [
     { name: "MOLBWA" },
     { name: "FUTBOLISTA" },
     { name: "PROFITTY" },
+    { name: "PORTFOLIO" },
 ];
 
 const SwiperSlider = () => {
