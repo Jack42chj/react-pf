@@ -182,5 +182,5 @@ react-pf
 ![3](https://github.com/Jack42chj/react-pf/assets/86552441/badc55a8-0d40-4cea-b3f2-b53f8a9f2ce3)
 ![4](https://github.com/Jack42chj/react-pf/assets/86552441/d1aca286-dceb-4f9a-8fce-01c5c4641d17)
 ![5](https://github.com/Jack42chj/react-pf/assets/86552441/fa07aefe-7a87-4758-942e-0373ed70d4fa)
-![6](https://github.com/Jack42chj/react-pf/assets/86552441/a49f2e45-67b4-4be6-a1c4-f929e1dea723)
+![6](https://github.com/Jack42chj/react-pf/assets/86552441/c54cc66a-9421-4baa-a8a9-82ff436b9479)
 ![7](https://github.com/Jack42chj/react-pf/assets/86552441/6693e84e-af95-4c64-b97c-68110d6472be)
