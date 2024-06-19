@@ -1,8 +1,8 @@
 import { useState } from "react";
-import styled from "styled-components";
-import BlogContent from "../components/BlogContent";
 import { useQuery } from "@tanstack/react-query";
+import styled from "styled-components";
 import { getBlogData } from "../apis/project-api";
+import BlogContent from "../components/BlogContent";
 
 const Wrapper = styled.div`
     width: 100%;

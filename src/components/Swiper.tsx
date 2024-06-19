@@ -4,8 +4,8 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import ProjectBox from "./ProjectBox";
 import styled from "styled-components";
+import ProjectBox from "./ProjectBox";
 
 const CustomSwiper = styled(Swiper)`
     .swiper-button-next,

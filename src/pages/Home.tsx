@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
-import Header from "../components/Header";
 import { Link } from "react-scroll";
+import Header from "../components/Header";
 import Store from "../stores/store";
 
 const bounce = keyframes`

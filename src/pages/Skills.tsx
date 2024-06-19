@@ -1,6 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
 import CustomCursor from "../components/CustomCursor";
-import { useState } from "react";
 
 const Wrapper = styled.div`
     width: 100%;
