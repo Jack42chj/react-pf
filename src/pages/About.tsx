@@ -170,7 +170,7 @@ const About = () => {
                                 width="20px"
                                 height="20px"
                             />
-                            https://velog.io/@hojinch99/posts
+                            https://velog.io/@hojinch99
                         </Text>
                     </InfoWrapper>
                     <Text className="title">

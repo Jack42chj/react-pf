@@ -47,6 +47,7 @@ const Footer = styled.div`
 const LinkItem = styled.div`
     cursor: pointer;
     img {
+        border-radius: 2px;
         height: 20px;
         width: auto;
         &:hover {
@@ -59,9 +60,9 @@ const LinkItem = styled.div`
 const Contact = () => {
     const onClickLink = (name: string) => {
         let url = "";
-        if (name === "velog") {
-            url = "https://velog.io/@hojinch99/posts";
-        } else url = "https://github.com/Jack42chj";
+        if (name === "velog") url = "https://velog.io/@hojinch99";
+        else if (name === "github") url = "https://github.com/Jack42chj";
+        else url = "https://www.linkedin.com/in/hojinchoi-jack42";
         window.open(url, "_blank");
     };
     return (
@@ -83,6 +84,14 @@ const Contact = () => {
                     <img
                         src="/svg/icons/velog.svg"
                         alt="velog-logo"
+                        width="18px"
+                        height="18px"
+                    />
+                </LinkItem>
+                <LinkItem onClick={() => onClickLink("linkedin")}>
+                    <img
+                        src="/svg/icons/linkedin.svg"
+                        alt="linkedin-logo"
                         width="18px"
                         height="18px"
                     />
