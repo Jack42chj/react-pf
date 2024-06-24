@@ -39,7 +39,7 @@ const Blog = () => {
         queryFn: async () => getBlogData(),
     });
     return (
-        <Wrapper>
+        <Wrapper id="blog">
             <Container>
                 {list &&
                     list.map((item) => (

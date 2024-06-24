@@ -57,7 +57,7 @@ const pages = [
     { id: "skill", name: "SKILLS", page: 2 },
     { id: "home", name: "LOGO", page: 0 },
     { id: "project", name: "PROJECTS", page: 3 },
-    { id: "archive", name: "BLOG", page: 4 },
+    { id: "blog", name: "BLOG", page: 4 },
 ];
 
 const Header = () => {
