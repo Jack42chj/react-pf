@@ -78,6 +78,8 @@ react-pf
 ├─ package-lock.json
 ├─ package.json
 ├─ public
+│  ├─ og.png
+│  ├─ robots.txt
 │  ├─ svg
 │  │  ├─ icons
 │  │  │  ├─ cancle.svg
