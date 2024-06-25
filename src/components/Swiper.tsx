@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import styled from "styled-components";
 import ProjectBox from "./ProjectBox";
+import { motion } from "framer-motion";
 
 const CustomSwiper = styled(Swiper)`
     .swiper-button-next,
@@ -51,6 +52,11 @@ const data = [
     { name: "PORTFOLIO" },
 ];
 
+const fadeInVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+};
+
 const SwiperSlider = () => {
     return (
         <CustomSwiper
@@ -74,7 +80,13 @@ const SwiperSlider = () => {
         >
             {data.map((item, i) => (
                 <SwiperSlide key={item.name}>
-                    <ProjectBox name={item.name} num={i + 1} />
+                    <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        variants={fadeInVariants}
+                    >
+                        <ProjectBox name={item.name} num={i + 1} />
+                    </motion.div>
                 </SwiperSlide>
             ))}
         </CustomSwiper>

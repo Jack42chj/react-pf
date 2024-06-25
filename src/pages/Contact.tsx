@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ContactBtn from "../components/ContactButton";
+import { motion } from "framer-motion";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -14,13 +15,16 @@ const Wrapper = styled.div`
     padding: 0px 20px;
 `;
 
-const Text = styled.div`
+const Text = styled(motion.div)`
     text-align: center;
     color: #ffffff;
     font-weight: bold;
-    font-size: 72px;
+    font-size: 96px;
+    @media (max-width: 1025px) {
+        font-size: 72px;
+    }
     @media (max-width: 769px) {
-        font-size: 28px;
+        font-size: 32px;
     }
     &.mail {
         color: #a6b6c9;
@@ -57,6 +61,11 @@ const LinkItem = styled.div`
     }
 `;
 
+const textVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+};
+
 const Contact = () => {
     const onClickLink = (name: string) => {
         let url = "";
@@ -67,7 +76,13 @@ const Contact = () => {
     };
     return (
         <Wrapper id="contact">
-            <Text>저에 대해 궁금하신가요?</Text>
+            <Text
+                initial="hidden"
+                whileInView="visible"
+                variants={textVariants}
+            >
+                저에 대해 궁금하신가요?
+            </Text>
             <Text className="mail">hojinch99@gmail.com</Text>
             <ContactBtn />
             <Footer>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -10,7 +11,7 @@ const Wrapper = styled.div`
     background-color: #00071e;
 `;
 
-const Container = styled.div`
+const Container = styled(motion.div)`
     width: 75%;
     height: 80vh;
     padding: 20px;
@@ -27,7 +28,7 @@ const Container = styled.div`
     }
 `;
 
-const MyPic = styled.div`
+const MyPic = styled(motion.div)`
     position: relative;
     background-image: url("/webp/me.webp");
     background-size: cover;
@@ -56,7 +57,7 @@ const MyPic = styled.div`
     }
 `;
 
-const DescWrapper = styled.div`
+const DescWrapper = styled(motion.div)`
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -118,12 +119,34 @@ const InfoWrapper = styled.div`
     }
 `;
 
+const parentsVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.5, duration: 1 },
+    },
+};
+
+const pictureVariants = {
+    hidden: { height: "20%", y: 50 },
+    visible: { height: "100%", y: 0, transition: { duration: 1 } },
+};
+
+const textVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 2 } },
+};
+
 const About = () => {
     return (
         <Wrapper id="about">
-            <Container>
-                <MyPic />
-                <DescWrapper>
+            <Container
+                initial="hidden"
+                whileInView="visible"
+                variants={parentsVariants}
+            >
+                <MyPic variants={pictureVariants} />
+                <DescWrapper variants={textVariants}>
                     <Text className="ename">CHOI HOJIN</Text>
                     <Text className="kname">최호진</Text>
                     <InfoWrapper>

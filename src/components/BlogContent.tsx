@@ -46,7 +46,7 @@ const Bar = styled.div`
 `;
 
 const Wrapper = styled.div<{ $isHovered: boolean; $isOtherHovered: boolean }>`
-    width: 25%;
+    width: 100%;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -67,7 +67,6 @@ const Wrapper = styled.div<{ $isHovered: boolean; $isOtherHovered: boolean }>`
     }
     @media (max-width: 1025px) {
         width: 100%;
-        height: 22.5%;
         ${Text} {
             &.title {
                 font-size: 18px;
