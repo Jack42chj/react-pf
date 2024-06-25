@@ -22,7 +22,7 @@ https://choihojin.vercel.app/
 
 ## 🗓️ 기간(Period)
 
-**2024.06.07 ~ 2024.06.18**
+**2024.06.07 ~ 2024.06.25**
 
 ## 📚 기술 스택(Stacks)
 
@@ -51,6 +51,7 @@ https://choihojin.vercel.app/
   <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white">
   <img src="https://img.shields.io/badge/Zustand-37996b?style=for-the-badge&logo=furrynetwork&logoColor=white">
   <img src="https://img.shields.io/badge/Swiper-6332F6?style=for-the-badge&logo=swiper&logoColor=white">
+  <img src="https://img.shields.io/badge/framer-0055ff?style=for-the-badge&logo=framer&logoColor=white">
 </div>
 
 ### 🗄️ 배포(CD)
@@ -81,6 +82,7 @@ react-pf
 │  │  ├─ icons
 │  │  │  ├─ cancle.svg
 │  │  │  ├─ github.svg
+│  │  │  ├─ linkedin.svg
 │  │  │  ├─ mail.svg
 │  │  │  ├─ person.svg
 │  │  │  ├─ phone.svg
