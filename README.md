@@ -1,4 +1,4 @@
-# 🙋‍♂️ 개인 포트폴리오 페이지(Personal Portfolio Page)
+# 🙋‍♂️ CHJ's Portfolio - 최호진의 포트폴리오
 
 ![logo](https://github.com/Jack42chj/react-pf/assets/86552441/5c2a2837-0e90-4efc-b4b0-08ab71dc3adc)
 
