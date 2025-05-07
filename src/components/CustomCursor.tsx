@@ -1,47 +1,48 @@
-import { useEffect } from "react";
-import styled from "styled-components";
+import React, { useEffect } from "react";
+
+import styled from "@emotion/styled";
 
 const CustomCursorWrapper = styled.div`
-    position: fixed;
-    pointer-events: none;
-    width: 140px;
-    height: 140px;
-    border-radius: 100%;
-    text-align: center;
-    background-color: #fefefe;
-    color: #00071e;
-    font-size: 20px;
-    font-weight: bold;
-    transition: transform 0.1s ease-in-out;
-    transform: translate(-50%, -90%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: wrap;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #00071e;
+  text-align: center;
+  white-space: wrap;
+  background-color: #fefefe;
+  transform: translate(-50%, -90%);
+  transition: transform 0.1s ease-in-out;
+  pointer-events: none;
 `;
 
 const useCustomCursor = () => {
-    useEffect(() => {
-        const cursor = document.getElementById("custom-cursor");
+  useEffect(() => {
+    const cursor = document.getElementById("custom-cursor");
 
-        if (!cursor) return;
+    if (!cursor) return;
 
-        const handleMouseMove = (e: MouseEvent) => {
-            cursor.style.left = `${e.clientX}px`;
-            cursor.style.top = `${e.clientY}px`;
-        };
+    const handleMouseMove = (e: MouseEvent) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+    };
 
-        window.addEventListener("mousemove", handleMouseMove);
-        return () => {
-            window.removeEventListener("mousemove", handleMouseMove);
-        };
-    }, []);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 };
 
 const CustomCursor: React.FC<{ text: string }> = ({ text }) => {
-    useCustomCursor();
+  useCustomCursor();
 
-    return <CustomCursorWrapper id="custom-cursor">{text}</CustomCursorWrapper>;
+  return <CustomCursorWrapper id="custom-cursor">{text}</CustomCursorWrapper>;
 };
 
 export default CustomCursor;

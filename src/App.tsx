@@ -1,17 +1,19 @@
-import { useEffect } from "react";
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
-import Home from "./pages/Home";
+import React, { useEffect } from "react";
+
+import { css, Global } from "@emotion/react";
+import emotionReset from "emotion-reset";
+
+import TopButton from "./components/TopButton";
 import About from "./pages/About";
-import Skills from "./pages/Skills";
-import Project from "./pages/Project";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+import Project from "./pages/Project";
+import Skills from "./pages/Skills";
 import Store from "./stores/store";
-import TopButton from "./components/TopButton";
 
-const GlobalStyles = createGlobalStyle`
-  ${reset};
+const globalStyles = css`
+  ${emotionReset};
   * {
     box-sizing: border-box;
   }
@@ -22,8 +24,8 @@ const GlobalStyles = createGlobalStyle`
     width: 4px;
   }
   &::-webkit-scrollbar-thumb {
-    background: #B0B0B0;
     border-radius: 10px;
+    background: #b0b0b0;
   }
   &::-webkit-scrollbar-track {
     background: rgba(0, 173, 181, 0.1);
@@ -31,50 +33,49 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const App = () => {
-    const { isOpen, currentPage, setCurrentPage } = Store();
-    const totalPages = 6;
+  const { isOpen, currentPage, setCurrentPage } = Store();
+  const totalPages = 6;
 
-    useEffect(() => {
-        const handleWheel = (e: WheelEvent) => {
-            if (!isOpen) {
-                e.preventDefault();
-                if (e.deltaY > 0) {
-                    if (currentPage < totalPages - 1) {
-                        setCurrentPage(currentPage + 1);
-                    }
-                } else if (e.deltaY < 0) {
-                    if (currentPage > 0) {
-                        setCurrentPage(currentPage - 1);
-                    }
-                }
-            }
-        };
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      if (!isOpen) {
+        e.preventDefault();
+        if (e.deltaY > 0) {
+          if (currentPage < totalPages - 1) {
+            setCurrentPage(currentPage + 1);
+          }
+        } else if (e.deltaY < 0) {
+          if (currentPage > 0) {
+            setCurrentPage(currentPage - 1);
+          }
+        }
+      }
+    };
 
-        window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("wheel", handleWheel, { passive: false });
 
-        return () => {
-            window.removeEventListener("wheel", handleWheel);
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [currentPage, isOpen]);
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, [currentPage, isOpen]);
 
-    useEffect(() => {
-        const posY = currentPage * window.innerHeight;
-        window.scrollTo({ top: posY, behavior: "smooth" });
-    }, [currentPage]);
+  useEffect(() => {
+    const posY = currentPage * window.innerHeight;
+    window.scrollTo({ top: posY, behavior: "smooth" });
+  }, [currentPage]);
 
-    return (
-        <>
-            <GlobalStyles />
-            <Home />
-            <About />
-            <Skills />
-            <Project />
-            <Blog />
-            <Contact />
-            {currentPage !== 0 && isOpen !== true && <TopButton />}
-        </>
-    );
+  return (
+    <>
+      <Global styles={globalStyles} />
+      <Home />
+      <About />
+      <Skills />
+      <Project />
+      <Blog />
+      <Contact />
+      {currentPage !== 0 && isOpen !== true && <TopButton />}
+    </>
+  );
 };
 
 export default App;
