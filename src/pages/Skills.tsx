@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import styled from "@emotion/styled";
 
-import CustomCursor from "../components/CustomCursor";
+import CustomCursor from "../components/cursor/CustomCursor";
 
 const Wrapper = styled.div`
   display: flex;
