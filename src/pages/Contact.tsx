@@ -3,7 +3,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-import ContactBtn from "../components/ContactButton";
+import ContactBtn from "../components/button/contact/ContactButton";
 
 const Wrapper = styled.div`
   position: relative;

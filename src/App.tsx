@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { css, Global } from "@emotion/react";
 import emotionReset from "emotion-reset";
 
-import TopButton from "./components/TopButton";
+import MoveTopButton from "./components/button/moveTop/MoveTopButton ";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
@@ -73,7 +73,7 @@ const App = () => {
       <Project />
       <Blog />
       <Contact />
-      {currentPage !== 0 && isOpen !== true && <TopButton />}
+      {currentPage !== 0 && isOpen !== true && <MoveTopButton />}
     </>
   );
 };
