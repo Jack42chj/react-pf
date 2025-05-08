@@ -5,11 +5,11 @@ import emotionReset from "emotion-reset";
 
 import MoveTopButton from "./components/button/moveTop/MoveTopButton";
 import Home from "./pages/Home";
-import Skills from "./pages/Skills";
 import About from "./pages/about/About";
 import Blog from "./pages/blog/Blog";
 import Contact from "./pages/contact/Contact";
 import Project from "./pages/project/Project";
+import Skills from "./pages/skills/Skills";
 import Store from "./stores/store";
 
 const globalStyles = css`
