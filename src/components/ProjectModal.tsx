@@ -3,10 +3,10 @@ import React, { useEffect } from "react";
 import styled from "@emotion/styled";
 import { useQuery } from "@tanstack/react-query";
 
-import ProjectContent from "./ProjectContent";
 import ProjectSkeleton from "./ProjectSkeleton";
 import { getProjectData } from "../apis/project-api";
 import Store from "../stores/store";
+import ProjectContent from "./project/content/ProjectContent";
 
 const Wrapper = styled.div`
   position: fixed;

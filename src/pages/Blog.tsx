@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 
 import { getBlogData } from "../apis/project-api";
-import BlogContent from "../components/BlogContent";
+import BlogContent from "../components/blog/BlogContent";
 
 const Wrapper = styled.div`
   position: relative;
