@@ -3,13 +3,13 @@ import React, { useEffect } from "react";
 import { css, Global } from "@emotion/react";
 import emotionReset from "emotion-reset";
 
-import MoveTopButton from "./components/button/moveTop/MoveTopButton ";
-import Contact from "./pages/Contact";
+import MoveTopButton from "./components/button/moveTop/MoveTopButton";
 import Home from "./pages/Home";
 import Project from "./pages/Project";
 import Skills from "./pages/Skills";
 import About from "./pages/about/About";
 import Blog from "./pages/blog/Blog";
+import Contact from "./pages/contact/Contact";
 import Store from "./stores/store";
 
 const globalStyles = css`
