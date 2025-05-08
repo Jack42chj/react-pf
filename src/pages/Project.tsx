@@ -2,8 +2,8 @@ import React from "react";
 
 import styled from "@emotion/styled";
 
-import ProjectModal from "../components/ProjectModal";
 import SwiperSlider from "../components/Swiper";
+import ProjectModal from "../components/modal/ProjectModal";
 
 const Wrapper = styled.div`
   display: flex;
