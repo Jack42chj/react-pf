@@ -1,10 +1,6 @@
-import React from "react";
-
 import styled from "@emotion/styled";
 
-import Store from "../stores/store";
-
-const Line = styled.div`
+export const Line = styled.div`
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -14,7 +10,7 @@ const Line = styled.div`
   transform: translateX(-50%);
 `;
 
-const Item = styled.div`
+export const Item = styled.div`
   position: absolute;
   left: 50%;
   font-size: 1.2rem;
@@ -33,7 +29,7 @@ const Item = styled.div`
   }
 `;
 
-const Logo = styled.div<{ $link: string }>`
+export const Logo = styled.div<{ $link: string }>`
   position: absolute;
   bottom: 50%;
   left: 50%;
@@ -46,7 +42,7 @@ const Logo = styled.div<{ $link: string }>`
   transition: opacity 1s;
 `;
 
-const Picture = styled.div<{ $link: string }>`
+export const Picture = styled.div<{ $link: string }>`
   width: 90%;
   height: 0px;
   margin-top: 16px;
@@ -55,13 +51,13 @@ const Picture = styled.div<{ $link: string }>`
   transition: 1s;
 `;
 
-const Triangle = styled.div`
+export const Triangle = styled.div`
   position: absolute;
   top: 5%;
   transition: opacity 1s;
 `;
 
-const Circle = styled.div`
+export const Circle = styled.div`
   position: absolute;
   top: 63%;
   width: 6px;
@@ -71,7 +67,7 @@ const Circle = styled.div`
   transition: opacity 1s;
 `;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -109,28 +105,3 @@ const Wrapper = styled.div`
     height: 400px;
   }
 `;
-
-const ProjectBox: React.FC<{ name: string; num: number }> = ({ name, num }) => {
-  const { setOpenModal } = Store();
-
-  return (
-    <Wrapper onClick={() => setOpenModal(name)}>
-      <Triangle>
-        <img
-          alt="triangle-icon"
-          src="/svg/icons/triangle.svg"
-          width="24px"
-          height="24px"
-        />
-      </Triangle>
-      <Circle />
-      <Logo $link={name.toLowerCase()} />
-      <Picture $link={name.toLowerCase()} />
-      <Item className="project">{name}</Item>
-      <Item className="num">0{num}</Item>
-      <Line />
-    </Wrapper>
-  );
-};
-
-export default ProjectBox;

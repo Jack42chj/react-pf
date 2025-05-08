@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import ProjectBox from "./ProjectBox";
+import ProjectBox from "./project/box/ProjectBox";
 
 const CustomSwiper = styled(Swiper)`
   .swiper-button-next,
