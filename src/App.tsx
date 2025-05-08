@@ -4,10 +4,10 @@ import { css, Global } from "@emotion/react";
 import emotionReset from "emotion-reset";
 
 import MoveTopButton from "./components/button/moveTop/MoveTopButton";
-import Home from "./pages/Home";
 import About from "./pages/about/About";
 import Blog from "./pages/blog/Blog";
 import Contact from "./pages/contact/Contact";
+import Home from "./pages/home/Home";
 import Project from "./pages/project/Project";
 import Skills from "./pages/skills/Skills";
 import Store from "./stores/store";
