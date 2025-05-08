@@ -3,13 +3,13 @@ import React, { useEffect } from "react";
 import { css, Global } from "@emotion/react";
 import emotionReset from "emotion-reset";
 
-import TopButton from "./components/TopButton";
-import About from "./pages/About";
-import Blog from "./pages/Blog";
-import Contact from "./pages/Contact";
-import Home from "./pages/Home";
-import Project from "./pages/Project";
-import Skills from "./pages/Skills";
+import MoveTopButton from "./components/button/moveTop/MoveTopButton";
+import About from "./pages/about/About";
+import Blog from "./pages/blog/Blog";
+import Contact from "./pages/contact/Contact";
+import Home from "./pages/home/Home";
+import Project from "./pages/project/Project";
+import Skills from "./pages/skills/Skills";
 import Store from "./stores/store";
 
 const globalStyles = css`
@@ -73,7 +73,7 @@ const App = () => {
       <Project />
       <Blog />
       <Contact />
-      {currentPage !== 0 && isOpen !== true && <TopButton />}
+      {currentPage !== 0 && isOpen !== true && <MoveTopButton />}
     </>
   );
 };

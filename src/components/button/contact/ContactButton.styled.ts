@@ -1,8 +1,6 @@
-import React from "react";
-
 import styled from "@emotion/styled";
 
-const BtnWrapper = styled.div`
+export const BtnWrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -43,25 +41,10 @@ const BtnWrapper = styled.div`
   }
 `;
 
-const BtnLine = styled.div`
+export const BtnLine = styled.div`
   position: absolute;
   left: 2%;
   width: 3px;
   height: 42px;
   background-color: #e4b783;
 `;
-
-const sendMail = () => {
-  window.location.href = "mailto:hojinch99@gmail.com";
-};
-
-const ContactBtn = () => {
-  return (
-    <BtnWrapper onClick={sendMail}>
-      <BtnLine />
-      CONTACT
-    </BtnWrapper>
-  );
-};
-
-export default ContactBtn;

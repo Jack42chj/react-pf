@@ -1,11 +1,6 @@
-import React from "react";
-
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Link } from "react-scroll";
-
-import Header from "../components/Header";
-import Store from "../stores/store";
 
 const bounce = keyframes`
   0%, 100% {
@@ -16,7 +11,7 @@ const bounce = keyframes`
   }
 `;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +20,7 @@ const Wrapper = styled.div`
   background: linear-gradient(#252540, #141426, #00071e, #00071e);
 `;
 
-const TextWrapper = styled.div`
+export const TextWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -38,8 +33,9 @@ const TextWrapper = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-const Text = styled.div`
+export const Text = styled.div`
   text-align: center;
+
   &.job {
     margin-right: -16px;
     font-size: 24px;
@@ -81,7 +77,7 @@ const Text = styled.div`
   }
 `;
 
-const DownIcon = styled.div`
+export const DownIcon = styled.div`
   position: absolute;
   bottom: 3%;
   left: 50%;
@@ -90,7 +86,7 @@ const DownIcon = styled.div`
   cursor: pointer;
 `;
 
-const CustomLink = styled(Link)`
+export const CustomLink = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,36 +105,3 @@ const CustomLink = styled(Link)`
     }
   }
 `;
-
-const Home = () => {
-  const { setCurrentPage } = Store();
-
-  return (
-    <Wrapper id="home">
-      <Header />
-      <TextWrapper>
-        <Text className="job">FRONTEND DEVELOPER</Text>
-        <Text className="name">CHOI HOJIN</Text>
-        <Text className="desc">P O R T F O L I O</Text>
-      </TextWrapper>
-      <DownIcon>
-        <CustomLink
-          to="about"
-          spy={true}
-          smooth={true}
-          onClick={() => setCurrentPage(1)}
-        >
-          S T A R T
-          <img
-            src="/webp/down.webp"
-            alt="down-icon"
-            width="32px"
-            height="36.5px"
-          />
-        </CustomLink>
-      </DownIcon>
-    </Wrapper>
-  );
-};
-
-export default Home;
