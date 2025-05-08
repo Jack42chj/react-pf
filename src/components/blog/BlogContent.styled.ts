@@ -1,16 +1,6 @@
-import React from "react";
-
 import styled from "@emotion/styled";
 
-interface BlogDataProps {
-  title: string;
-  date: string;
-  desc: string;
-  img: string;
-  url: string;
-}
-
-const Picture = styled.div<{ $link: string }>`
+export const Picture = styled.div<{ $link: string }>`
   width: 100%;
   height: 240px;
   background-image: url(${(props) => props.$link});
@@ -26,7 +16,7 @@ const Picture = styled.div<{ $link: string }>`
   }
 `;
 
-const Text = styled.div`
+export const Text = styled.div`
   &.title {
     font-size: 22px;
     font-weight: bold;
@@ -45,13 +35,16 @@ const Text = styled.div`
   }
 `;
 
-const Bar = styled.div`
+export const Bar = styled.div`
   width: 25%;
   height: 3px;
   background-color: #66d6df;
 `;
 
-const Wrapper = styled.div<{ $isHovered: boolean; $isOtherHovered: boolean }>`
+export const Wrapper = styled.div<{
+  $isHovered: boolean;
+  $isOtherHovered: boolean;
+}>`
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -87,32 +80,3 @@ const Wrapper = styled.div<{ $isHovered: boolean; $isOtherHovered: boolean }>`
     }
   }
 `;
-
-const BlogContent: React.FC<{
-  data: BlogDataProps;
-  isHovered: boolean;
-  isOtherHovered: boolean;
-  onHover: () => void;
-  onLeave: () => void;
-}> = ({ data, isHovered, isOtherHovered, onHover, onLeave }) => {
-  const onClickLink = (url: string) => {
-    window.open(url, "_blank");
-  };
-  return (
-    <Wrapper
-      onClick={() => onClickLink(data.url)}
-      $isHovered={isHovered}
-      $isOtherHovered={isOtherHovered}
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
-    >
-      <Picture $link={data.img} />
-      <Text className="title">{data.title}</Text>
-      <Text className="date">{data.date}</Text>
-      <Bar />
-      <Text className="desc">{data.desc}</Text>
-    </Wrapper>
-  );
-};
-
-export default BlogContent;
