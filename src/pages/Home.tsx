@@ -4,7 +4,7 @@ import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Link } from "react-scroll";
 
-import Header from "../components/Header";
+import Header from "../components/header/Header";
 import Store from "../stores/store";
 
 const bounce = keyframes`
