@@ -21,6 +21,7 @@ export const Container = styled(motion.div)`
   align-items: flex-start;
   gap: 30px;
   width: 80%;
+
   @media (max-width: 1025px) {
     flex-direction: column;
     justify-content: center;
@@ -31,6 +32,7 @@ export const Container = styled(motion.div)`
 
 export const Box = styled(motion.div)`
   width: 25%;
+
   @media (max-width: 1025px) {
     width: 100%;
   }

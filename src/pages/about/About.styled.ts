@@ -20,6 +20,7 @@ export const Container = styled(motion.div)`
   border: 2px solid rgb(28, 36, 67);
   padding: 20px;
   background-color: #060c26;
+
   @media (max-width: 769px) {
     flex-direction: column;
     width: 90%;
@@ -38,12 +39,6 @@ export const MyPic = styled(motion.div)`
   background-size: cover;
   background-position: center;
 
-  @media (max-width: 769px) {
-    right: 0;
-    min-height: 200px;
-    width: 100%;
-    height: 50%;
-  }
   &:before {
     content: "";
     position: absolute;
@@ -55,6 +50,13 @@ export const MyPic = styled(motion.div)`
     box-sizing: border-box;
     pointer-events: none;
   }
+
+  @media (max-width: 769px) {
+    right: 0;
+    min-height: 200px;
+    width: 100%;
+    height: 50%;
+  }
 `;
 
 export const DescWrapper = styled(motion.div)`
@@ -65,6 +67,7 @@ export const DescWrapper = styled(motion.div)`
   gap: 40px;
   width: 100%;
   color: #ffffff;
+
   @media (max-width: 1025px) {
     gap: 20px;
   }
@@ -72,31 +75,38 @@ export const DescWrapper = styled(motion.div)`
 
 export const Text = styled.div`
   font-weight: bold;
+
   &.ename {
     font-size: 18px;
     letter-spacing: 6px;
     color: #e4b783;
   }
+
   &.kname {
     font-size: 36px;
     letter-spacing: 12px;
     color: #e4b783;
   }
+
   &.title {
     font-size: 36px;
     color: #fff;
+
     @media (max-width: 1025px) {
       font-size: 24px;
     }
   }
+
   &.desc {
     font-size: 16px;
     line-height: 30px;
     color: #a6b6c9;
+
     @media (max-width: 1025px) {
       font-size: 14px;
     }
   }
+
   &.info {
     display: flex;
     align-items: center;
@@ -104,6 +114,7 @@ export const Text = styled.div`
     font-size: 16px;
     font-weight: bold;
     color: #a6b6c9;
+
     @media (max-width: 1025px) {
       font-size: 14px;
     }
@@ -114,6 +125,7 @@ export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
   @media (max-width: 1025px) {
     gap: 12px;
   }
