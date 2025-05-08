@@ -4,12 +4,12 @@ import { css, Global } from "@emotion/react";
 import emotionReset from "emotion-reset";
 
 import MoveTopButton from "./components/button/moveTop/MoveTopButton ";
-import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Project from "./pages/Project";
 import Skills from "./pages/Skills";
+import About from "./pages/about/About";
 import Store from "./stores/store";
 
 const globalStyles = css`
