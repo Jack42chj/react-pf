@@ -23,13 +23,14 @@ const BlogContent = ({
   onHover,
   onLeave,
 }: BlogContentProps) => {
-  const onClickLink = (url: string): void => {
-    window.open(url, "_blank");
-  };
+  const onClickLink =
+    (url: string) => (e: React.MouseEvent<HTMLDivElement>) => {
+      window.open(url, "_blank");
+    };
 
   return (
     <S.Wrapper
-      onClick={() => onClickLink(data.url)}
+      onClick={onClickLink(data.url)}
       $isHovered={isHovered}
       $isOtherHovered={isOtherHovered}
       onMouseEnter={onHover}

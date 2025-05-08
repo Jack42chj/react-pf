@@ -11,8 +11,12 @@ interface ProjectBoxProps {
 const ProjectBox = ({ name, num }: ProjectBoxProps) => {
   const { setOpenModal } = Store();
 
+  const handleModalOpen = (e: React.MouseEvent<HTMLDivElement>): void => {
+    setOpenModal(name);
+  };
+
   return (
-    <S.Wrapper onClick={() => setOpenModal(name)}>
+    <S.Wrapper onClick={handleModalOpen}>
       <S.Triangle>
         <img
           alt="triangle-icon"

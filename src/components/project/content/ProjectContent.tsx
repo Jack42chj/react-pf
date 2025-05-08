@@ -20,9 +20,11 @@ interface ProjectContentProps {
 }
 
 const ProjectContent = ({ list, title }: ProjectContentProps) => {
-  const onClickLink = (url: string): void => {
-    window.open(url, "_blank");
-  };
+  const onClickLink =
+    (url: string) =>
+    (e: React.MouseEvent<HTMLDivElement>): void => {
+      window.open(url, "_blank");
+    };
 
   return (
     <>
@@ -62,7 +64,7 @@ const ProjectContent = ({ list, title }: ProjectContentProps) => {
         <S.Text className="subtitle">🔗 Link</S.Text>
         <S.SkillBox>
           {list.git_link && (
-            <S.LinkItem onClick={() => onClickLink(list.git_link)}>
+            <S.LinkItem onClick={onClickLink(list.git_link)}>
               <img
                 src="/svg/stack/github.svg"
                 alt="github-logo"
@@ -73,7 +75,7 @@ const ProjectContent = ({ list, title }: ProjectContentProps) => {
             </S.LinkItem>
           )}
           {list.v_link && (
-            <S.LinkItem onClick={() => onClickLink(list.v_link)}>
+            <S.LinkItem onClick={onClickLink(list.v_link)}>
               <img
                 src="/svg/stack/velog.svg"
                 alt="velog-logo"
@@ -84,7 +86,7 @@ const ProjectContent = ({ list, title }: ProjectContentProps) => {
             </S.LinkItem>
           )}
           {list.web_link && (
-            <S.LinkItem onClick={() => onClickLink(list.web_link)}>
+            <S.LinkItem onClick={onClickLink(list.web_link)}>
               <img
                 src="/svg/stack/vercel.svg"
                 alt="vercel-logo"
