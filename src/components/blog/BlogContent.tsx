@@ -1,15 +1,10 @@
 import React from "react";
 
 import * as S from "./BlogContent.styled";
+import type { GetBlogsModel } from "../../types/blog";
 
 interface BlogContentProps {
-  data: {
-    title: string;
-    date: string;
-    desc: string;
-    img: string;
-    url: string;
-  };
+  data: GetBlogsModel["data"][number];
   isHovered: boolean;
   isOtherHovered: boolean;
   onHover: () => void;

@@ -1,19 +1,14 @@
 import React, { useEffect } from "react";
 
-import { useQuery } from "@tanstack/react-query";
-
 import * as S from "./ProjectModal.styled";
-import { getProjectData } from "../../apis/project-api";
+import { useGetProjectDetail } from "../../services/project";
 import Store from "../../stores/store";
 import ProjectContent from "../project/content/ProjectContent";
 import ProjectContentSkeleton from "../project/skeleton/ProjectContent.skeleton";
 
 const ProjectModal = () => {
   const { setCloseModal, title, isOpen } = Store();
-  const { data: list, isLoading } = useQuery({
-    queryKey: ["project_data", title],
-    queryFn: async () => getProjectData(title),
-  });
+  const { isLoading, data } = useGetProjectDetail(title);
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent): void => {
@@ -58,7 +53,7 @@ const ProjectModal = () => {
         {isLoading ? (
           <ProjectContentSkeleton />
         ) : (
-          list && <ProjectContent list={list} title={title} />
+          data && <ProjectContent data={data} />
         )}
         <S.CancleIcon onClick={setCloseModal}>
           <img
