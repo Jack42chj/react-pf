@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 
-import { useQuery } from "@tanstack/react-query";
-
 import * as S from "./Blog.styled";
-import { getBlogData } from "../../apis/project-api";
 import BlogContent from "../../components/blog/BlogContent";
+import { useGetBlogs } from "../../services/blog";
 
 const Blog = () => {
   const [hovered, setHovered] = useState<string | null>(null);
-  const { data: list } = useQuery({
-    queryKey: ["blog_data"],
-    queryFn: async () => getBlogData(),
-  });
+
+  const { data } = useGetBlogs();
 
   return (
     <S.Wrapper id="blog">
@@ -20,18 +16,17 @@ const Blog = () => {
         whileInView="visible"
         variants={S.parentsVariants}
       >
-        {list &&
-          list.map((item) => (
-            <S.Box key={item.title} variants={S.childVariants}>
-              <BlogContent
-                data={item}
-                isHovered={hovered === item.title}
-                isOtherHovered={hovered !== null}
-                onHover={() => setHovered(item.title)}
-                onLeave={() => setHovered(null)}
-              />
-            </S.Box>
-          ))}
+        {data?.map((item) => (
+          <S.Box key={item.title} variants={S.childVariants}>
+            <BlogContent
+              data={item}
+              isHovered={hovered === item.title}
+              isOtherHovered={hovered !== null}
+              onHover={() => setHovered(item.title)}
+              onLeave={() => setHovered(null)}
+            />
+          </S.Box>
+        ))}
       </S.Container>
     </S.Wrapper>
   );

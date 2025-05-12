@@ -9,18 +9,11 @@ import { Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 
 import * as S from "./Swiper.styled";
+import { useGetProjects } from "../../services/project";
 import ProjectBox from "../project/box/ProjectBox";
 
 const SwiperSlider = () => {
-  const data = [
-    { name: "COFFEEZIP" },
-    { name: "BINZIP" },
-    { name: "MUSTGO" },
-    { name: "MOLBWA" },
-    { name: "FUTBOLISTA" },
-    { name: "PROFITTY" },
-    { name: "PORTFOLIO" },
-  ];
+  const { data } = useGetProjects();
 
   return (
     <S.CustomSwiper
@@ -42,14 +35,14 @@ const SwiperSlider = () => {
         },
       }}
     >
-      {data.map((item, i) => (
-        <SwiperSlide key={item.name}>
+      {data?.map((item, i) => (
+        <SwiperSlide key={item.projectId}>
           <motion.div
             initial="hidden"
             whileInView="visible"
             variants={S.fadeInVariants}
           >
-            <ProjectBox name={item.name} num={i + 1} />
+            <ProjectBox data={item} index={i + 1} />
           </motion.div>
         </SwiperSlide>
       ))}

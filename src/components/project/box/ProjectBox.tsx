@@ -2,17 +2,18 @@ import React from "react";
 
 import * as S from "./ProjectBox.styled";
 import Store from "../../../stores/store";
+import type { GetProjectsModel } from "../../../types/project";
 
 interface ProjectBoxProps {
-  name: string;
-  num: number;
+  data: GetProjectsModel["data"][number];
+  index: number;
 }
 
-const ProjectBox = ({ name, num }: ProjectBoxProps) => {
+const ProjectBox = ({ data, index }: ProjectBoxProps) => {
   const { setOpenModal } = Store();
 
   const handleModalOpen = (e: React.MouseEvent<HTMLDivElement>): void => {
-    setOpenModal(name);
+    setOpenModal(data.projectId);
   };
 
   return (
@@ -26,10 +27,10 @@ const ProjectBox = ({ name, num }: ProjectBoxProps) => {
         />
       </S.Triangle>
       <S.Circle />
-      <S.Logo $link={name.toLowerCase()} />
-      <S.Picture $link={name.toLowerCase()} />
-      <S.Item className="project">{name}</S.Item>
-      <S.Item className="num">0{num}</S.Item>
+      <S.Logo $link={data.title.toLowerCase()} />
+      <S.Picture $link={data.title.toLowerCase()} />
+      <S.Item className="project">{data.title}</S.Item>
+      <S.Item className="num">0{index}</S.Item>
       <S.Line />
     </S.Wrapper>
   );
