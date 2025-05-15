@@ -3,10 +3,10 @@ import React from "react";
 import { Link } from "react-scroll";
 
 import * as S from "./MoveTopButton.styled";
-import Store from "../../../stores/store";
+import { usePaginationStore } from "../../../stores/pagination";
 
 const MoveTopButton = () => {
-  const { setCurrentPage } = Store();
+  const { setCurrentPage } = usePaginationStore();
 
   return (
     <Link to="home" spy={true} smooth={true} onClick={() => setCurrentPage(0)}>

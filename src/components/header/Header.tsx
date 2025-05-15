@@ -3,10 +3,10 @@ import React from "react";
 import { Link } from "react-scroll";
 
 import * as S from "./Header.styled";
-import Store from "../../stores/store";
+import { usePaginationStore } from "../../stores/pagination";
 
 const Header = () => {
-  const { setCurrentPage } = Store();
+  const { setCurrentPage } = usePaginationStore();
 
   const pages = [
     { id: "about", name: "ABOUT", page: 1 },
