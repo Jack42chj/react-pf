@@ -2,10 +2,10 @@ import React from "react";
 
 import * as S from "./Home.styled";
 import Header from "../../components/header/Header";
-import Store from "../../stores/store";
+import { usePaginationStore } from "../../stores/pagination";
 
 const Home = () => {
-  const { setCurrentPage } = Store();
+  const { setCurrentPage } = usePaginationStore();
 
   return (
     <S.Wrapper id="home">
