@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 import { css, Global } from "@emotion/react";
 import emotionReset from "emotion-reset";
+import { setAutoFreeze } from "immer";
 
 import MoveTopButton from "./components/button/moveTop/MoveTopButton";
 import Modal from "./components/modal/Modal";
@@ -40,8 +41,11 @@ const globalStyles = css`
 `;
 
 const App = () => {
+  setAutoFreeze(false);
+
   const { isOpen, currentPage, setCurrentPage } = usePaginationStore();
   const { modals } = useModalStore();
+
   const totalPages = 6;
 
   useEffect(() => {
