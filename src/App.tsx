@@ -4,13 +4,15 @@ import { css, Global } from "@emotion/react";
 import emotionReset from "emotion-reset";
 
 import MoveTopButton from "./components/button/moveTop/MoveTopButton";
+import Modal from "./components/modal/Modal";
 import About from "./pages/about/About";
 import Blog from "./pages/blog/Blog";
 import Contact from "./pages/contact/Contact";
 import Home from "./pages/home/Home";
 import Project from "./pages/project/Project";
 import Skills from "./pages/skills/Skills";
-import Store from "./stores/store";
+import { useModalStore } from "./stores/modal";
+import { usePaginationStore } from "./stores/pagination";
 
 const globalStyles = css`
   ${emotionReset};
@@ -18,7 +20,12 @@ const globalStyles = css`
     box-sizing: border-box;
   }
   body {
+    overflow-y: auto;
     font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  }
+  dialog {
+    border: 0;
+    padding: 0;
   }
   &::-webkit-scrollbar {
     width: 4px;
@@ -33,12 +40,15 @@ const globalStyles = css`
 `;
 
 const App = () => {
-  const { isOpen, currentPage, setCurrentPage } = Store();
+  const { isOpen, currentPage, setCurrentPage } = usePaginationStore();
+  const { modals } = useModalStore();
   const totalPages = 6;
 
   useEffect(() => {
+    if (modals.length > 0) return;
+
     const handleWheel = (e: WheelEvent) => {
-      if (!isOpen) {
+      if (modals.length === 0) {
         e.preventDefault();
         if (e.deltaY > 0) {
           if (currentPage < totalPages - 1) {
@@ -57,7 +67,7 @@ const App = () => {
     return () => {
       window.removeEventListener("wheel", handleWheel);
     };
-  }, [currentPage, isOpen]);
+  }, [currentPage, modals.length]);
 
   useEffect(() => {
     const posY = currentPage * window.innerHeight;
@@ -66,6 +76,7 @@ const App = () => {
 
   return (
     <>
+      <Modal />
       <Global styles={globalStyles} />
       <Home />
       <About />
