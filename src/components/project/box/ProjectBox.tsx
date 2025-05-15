@@ -1,8 +1,9 @@
 import React from "react";
 
 import * as S from "./ProjectBox.styled";
-import Store from "../../../stores/store";
+import useModal from "../../../hooks/useModal";
 import type { GetProjectsModel } from "../../../types/project";
+import ProjectModal from "../../modal/project/ProjectModal";
 
 interface ProjectBoxProps {
   data: GetProjectsModel["data"][number];
@@ -10,14 +11,14 @@ interface ProjectBoxProps {
 }
 
 const ProjectBox = ({ data, index }: ProjectBoxProps) => {
-  const { setOpenModal } = Store();
-
-  const handleModalOpen = (e: React.MouseEvent<HTMLDivElement>): void => {
-    setOpenModal(data.projectId);
-  };
+  const { modalRef, handleModalOpen } = useModal();
 
   return (
-    <S.Wrapper onClick={handleModalOpen}>
+    <S.Wrapper
+      onClick={handleModalOpen(
+        <ProjectModal ref={modalRef} projectId={data.projectId} />,
+      )}
+    >
       <S.Triangle>
         <img
           alt="triangle-icon"
